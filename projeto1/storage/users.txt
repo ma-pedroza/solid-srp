@@ -1,0 +1,13 @@
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"João","email":"joao@email.com","password":"Senha123"}
+{"name":"Paulo","email":"paulo@email.com","password":"$2y$10$ZcYeZ4a\/HSEpbWYrGFnMW.zkBjof7toC71UDW.jMlfqnxhr5\/w1b."}
+{"name":"Matheus","email":"matheusgomeszpedroza@gmail.com","password":"$2y$10$h7rF6Qt\/16mI4v89KzJgaOFANVIiEi\/2i2g9MRnE4MpzQTAVb2moG"}
+{"name":"rodrigo","email":"bassalobre@gmail.com","password":"$2y$10$6lzTD3bke0PsanhH3JIqn.r2mivq.CumZDSg0qsd\/oMw6wY2wZKIO"}
+{"name":"raysa","email":"gomides@gmail.com","password":"$2y$10$KtRNrqhnkAe1IRa38TsnYeMn7C4kFH3s0AW3ZkFveB8P\/yr.n664G"}
