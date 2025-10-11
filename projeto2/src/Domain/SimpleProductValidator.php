@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-final class SimpleProductValidator
+use App\Contracts\ProductValidator;
+
+final class SimpleProductValidator implements ProductValidator
 {
     /**
      * @param arayy{name?:string,price?:float} $input
