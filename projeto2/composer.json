@@ -1,0 +1,18 @@
+{
+    "name": "rayss/projeto2",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rayss\\Projeto2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rayssa Marconato",
+            "email": "rayssa.g.marconato@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0"
+    }
+}
