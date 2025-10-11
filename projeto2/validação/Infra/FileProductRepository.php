@@ -24,9 +24,38 @@ final class FileProductRepository implements ProductRepository
         }
     }
 
-    public function getAll(): void
+    public function getAll(): array
     {
-        
+        $lines = file($this->filePath);
+
+        $products = [];
+
+        foreach ($lines as $line){
+            $product = json_decode($line, true);
+
+            $products[] = $product;
+        }
+
+        return $products;
+    }
+
+    public function getLastProductId(): int
+    {
+        $products = $this->getAll();
+
+        if (empty($products)) {
+            return 1;
+        }
+
+        $lastId = 0;
+
+        foreach ($products as $product) {
+            if($product['id'] > $lastId) {
+                $lastId = $product['id'];
+            }
+        }
+
+        return $lastId + 1;
     }
 
 }

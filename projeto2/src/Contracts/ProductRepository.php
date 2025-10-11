@@ -6,5 +6,7 @@ namespace App\Contracts;
 
 interface ProductRepository
 {
-    public function getAll() : void;
+    public function getAll() : array;
+
+    public function getLastProductId() : int;    
 }
