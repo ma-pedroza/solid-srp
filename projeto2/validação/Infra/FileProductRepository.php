@@ -58,4 +58,8 @@ final class FileProductRepository implements ProductRepository
         return $lastId + 1;
     }
 
+    public function save(array $product) : void
+    {
+        return;
+    }
 }

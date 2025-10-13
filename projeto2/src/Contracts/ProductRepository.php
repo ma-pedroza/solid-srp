@@ -9,4 +9,6 @@ interface ProductRepository
     public function getAll() : array;
 
     public function getLastProductId() : int;    
+
+    public function save(array $product) : void;
 }
