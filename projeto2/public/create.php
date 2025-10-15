@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php.';
+require __DIR__ . '/../vendor/autoload.php';
 
 use App\Infra\FileProductRepository;
 use App\Application\ProductService;
@@ -10,7 +10,13 @@ $file = __DIR__ . '/../storage/products.txt';
 
 $service = new ProductService(new SimpleProductValidator(), new FileProductRepository($file));
 
-$response = $service->create($_POST);
+$result = $service->create($_POST);
 
-http_response_code($response ? 201 : 422);
-?>
+if ($result['success']) {
+    header('Location: index.php?status=success&msg=' . urlencode('Produto cadastrado com sucesso!'));
+    exit();
+} else {
+    $error_msg = implode(' | ', $result['errors']);
+    header('Location: index.php?status=error&msg=' . urlencode($error_msg));
+    exit();
+}

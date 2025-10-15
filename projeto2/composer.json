@@ -1,9 +1,11 @@
 {
     "name": "rayss/projeto2",
+    "description": "Cadastro e Listagem de Produtos com SRP",
+    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Rayss\\Projeto2\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

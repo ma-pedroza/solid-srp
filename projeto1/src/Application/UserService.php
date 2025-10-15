@@ -38,10 +38,9 @@ class UserService
         return true;
     }
 
-    public function listUsers(): array{
-        $users = $this->repository->findAll();
-
-        return $users;
+    public function listUsers(): array
+    {
+        return $this->repository->findAll();
     }
 }
 

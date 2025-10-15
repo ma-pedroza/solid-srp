@@ -1,0 +1,2 @@
+{"id":1,"name":"Teste produto","price":"987"}
+{"id":2,"name":"Monitor","price":999.98}

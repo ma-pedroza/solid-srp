@@ -6,7 +6,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Application\UserService;
 use App\Domain\UserValidator;
-use App\Domain\UserRepository;
 use App\Infra\FileUserRepository;
 
 $file = __DIR__ . '/../storage/users.txt';

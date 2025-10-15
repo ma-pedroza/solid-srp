@@ -38,14 +38,14 @@ final class FileUserRepository implements UserRepository
 
     public function findAll(): array
     {
-        $lines = file($this->filePath);
-
+        $lines = file($this->filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $users = [];
 
-        foreach ($lines as $line){
+        foreach ($lines as $line) {
             $user = json_decode($line, true);
-
-            $users[] = $user;
+            if (is_array($user)) {
+                $users[] = $user;
+            }
         }
 
         return $users;

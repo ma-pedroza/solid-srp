@@ -19,22 +19,40 @@ class ProductService
     }
 
     /**
-     * @param array{name?:string:price?:int} $input
+     * @param array{name?:string:price?:float} $input
+     * @return array{success: bool, errors: array<string>}
      */
-    public function create(array $input): bool
+    public function create(array $input): array
     {
-       $errors = $this->validator->validate($input);
+        $errors = $this->validator->validate($input);
 
-       if (!empty($errors)) {
-            return false;
-       }
+        if (!empty($errors)) {
+            return [
+                'success' => false,
+                'errors' => $errors
+            ];
+        }
 
-       $product = [
-        'name' => isset($input['name']) ? (string) $input['name'] : 'Seu Produto',
-        'price' => isset($input['price']) ? $input['price'] : 0.00,
-       ];
+        $product = [
+            'name' => isset($input['name']) ? (string) $input['name'] : 'Seu Produto',
+            'price' => isset($input['price']) ? (float) $input['price'] : 0.00,
+        ];
 
-       $this->repository->save($product);
-       return true;
+        $this->repository->save($product);
+
+        return [
+            'success' => true,
+            'errors' => []
+        ];
+    }
+
+    /**
+     * Lista todos os produtos.
+     *
+     * @return array<array{id:int, name:string, price:float}>
+     */
+    public function list(): array
+    {
+        return $this->repository->findAll();
     }
 }

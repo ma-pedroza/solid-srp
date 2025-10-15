@@ -8,20 +8,16 @@ use App\Contracts\ProductValidator;
 
 final class SimpleProductValidator implements ProductValidator
 {
-    /**
-     * @param arayy{name?:string,price?:float} $input
-     */
-
     public function validate(array $input): array
     {
         $errors = [];
 
-        if (strlen($input['name']) <2 or strlen($input['name']) > 100) {
-            $errors[] = 'Nome deve conter entre 2 e 100 caracteres';
+        if (empty($input['name']) || strlen($input['name']) < 2 || strlen($input['name']) > 100) {
+            $errors[] = 'O nome do produto deve ter entre 2 e 100 caracteres.';
         }
 
-        if ($input['price'] >= 0) {
-            $errors[] = 'Preço deve ser maior do que 0';
+        if (!isset($input['price']) || !is_numeric($input['price']) || $input['price'] < 0) {
+            $errors[] = 'O preço do produto deve ser um número não negativo.';
         }
 
         return $errors;
